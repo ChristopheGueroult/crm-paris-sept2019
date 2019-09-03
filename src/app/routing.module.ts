@@ -8,7 +8,19 @@ const appRoutes: Routes = [
     path: '',
     redirectTo: '/login',
     pathMatch: 'full'
-  }
+  },
+  {
+    path: 'prestations',
+    loadChildren: () => import('src/app/prestations/prestations.module').then(mod => mod.PrestationsModule),
+  },
+  {
+    path: 'clients',
+    loadChildren: () => import('src/app/clients/clients.module').then(mod => mod.ClientsModule),
+  },
+  {
+    path: '**',
+    loadChildren: () => import('src/app/page-not-found/page-not-found.module').then(mod => mod.PageNotFoundModule),
+  },
 ];
 
 
