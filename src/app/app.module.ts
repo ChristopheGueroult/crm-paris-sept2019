@@ -4,6 +4,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import { LoginModule } from './login/login.module';
 import { UiModule } from './ui/ui.module';
+import { RoutingModule } from './routing.module';
 
 
 @NgModule({
@@ -13,6 +14,7 @@ import { UiModule } from './ui/ui.module';
   imports: [
     BrowserModule,
     NgbModule,
+    RoutingModule,
     UiModule,
     LoginModule
   ],
