@@ -1,15 +1,27 @@
 import { Injectable } from '@angular/core';
+import { Prestation } from 'src/app/shared/models/prestation';
+import { fakeCollection } from './fake-collection';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PrestationsService {
+  private pCollection: Prestation[];
+  constructor() {
+    this.collection = fakeCollection;
 
-  constructor() { }
+  }
 
   // get collection
+  get collection(): Prestation[] {
+    return this.pCollection;
+  }
 
   // set collection
+  set collection(col: Prestation[]) {
+    this.pCollection = col;
+  }
+
 
   // update item in collection
 
