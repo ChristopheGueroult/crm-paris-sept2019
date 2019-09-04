@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PrestationsService } from '../../services/prestations.service';
 import { Prestation } from 'src/app/shared/models/prestation';
+import { State } from 'src/app/shared/enums/state.enum';
 
 @Component({
   selector: 'app-list-prestations',
@@ -8,6 +9,7 @@ import { Prestation } from 'src/app/shared/models/prestation';
   styleUrls: ['./list-prestations.component.scss']
 })
 export class ListPrestationsComponent implements OnInit {
+  public states = State;
   public collection: Prestation[];
   public headers = [
     'Type',
@@ -25,6 +27,11 @@ export class ListPrestationsComponent implements OnInit {
   ngOnInit() {
     this.collection = this.prestationsService.collection;
 
+  }
+
+  public changeState(arg, item) {
+    // console.log(arg.target.value);
+    this.prestationsService.update(item, arg.target.value);
   }
 
 }

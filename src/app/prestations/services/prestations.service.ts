@@ -24,6 +24,11 @@ export class PrestationsService {
 
 
   // update item in collection
+  public update(item, state) {
+    console.log(item);
+    item.state = state;
+    console.log(item);
+  }
 
   // add item in collection
 
