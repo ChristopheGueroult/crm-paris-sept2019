@@ -1,18 +1,16 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { SharedModule } from '../shared/shared.module';
+import { ListPrestationsComponent } from './containers/list-prestations/list-prestations.component';
 import { PrestationsComponent } from './pages/prestations/prestations.component';
 import { PrestationsRoutingModule } from './prestations-routing.module';
-import { ListPrestationsComponent } from './containers/list-prestations/list-prestations.component';
 
 @NgModule({
   declarations: [PrestationsComponent, ListPrestationsComponent],
   imports: [
     CommonModule,
-    PrestationsRoutingModule
+    PrestationsRoutingModule,
+    SharedModule
   ]
 })
 export class PrestationsModule { }
-
-// faire pareil pour LoginRoutingModule sauf que c'est pas du lazy loading
-// faire pareil pour PageNotFoundRoutingModule
-// faire pareil pour ClientsRoutingModule
