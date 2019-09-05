@@ -25,7 +25,11 @@ export class ListPrestationsComponent implements OnInit {
 
   ngOnInit() {
     this.collection = this.prestationsService.collection;
+  }
 
+  changeState(arg) {
+    // console.log(arg);
+    this.prestationsService.update(arg.obj, arg.state);
   }
 
 }
