@@ -31,6 +31,9 @@ export class ClientsService {
   }
 
   // add item in collection
+  public add(item: Client) {
+    this.collection.push(item);
+  }
 
   // get item by id in collection
 }

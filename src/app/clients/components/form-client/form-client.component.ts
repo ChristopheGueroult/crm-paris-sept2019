@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { StateClient } from 'src/app/shared/enums/state-client.enum';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Client } from 'src/app/shared/models/client';
@@ -11,6 +11,7 @@ import { Client } from 'src/app/shared/models/client';
 export class FormClientComponent implements OnInit {
   public states = StateClient;
   public form: FormGroup;
+  @Output() doItem: EventEmitter<any> = new EventEmitter();
   private clt = new Client();
   constructor(
     private fb: FormBuilder
@@ -35,7 +36,8 @@ export class FormClientComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.form.value);
+    // console.log(this.form.value);
+    this.doItem.emit(this.form.value);
 
   }
 
